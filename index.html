@@ -1,0 +1,71 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Breast Cancer Detection</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet"> 
+	<style>
+	.bg-dark {background-color: #42678c!important;}
+	#result {color: #0a1c4ed1;}
+	body {background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTrnALUT8RsRumky9Ox4Rmg9powo5iaefPSDGTxZPlsY8uRYecl&usqp=CAU");background-size:100% 100%;}
+   </style>
+	</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">DEEP LEARNING TECHNIQUES FOR BREAST CANCER RISK PREDICTION</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="content" style="margin-top:2em;">
+		<div class="container">
+		  <div class="row">
+			<div class="col-sm-6 bd" >
+			  <h3 style="font-family:Arial Black;color:magenta;font-size:200%;">Breast cancer Prediction </h3>
+			  <br>
+			  <p style="font-family:Times New Roman;color:white;font-size:155%;"> Breast cancer is one of the main causes of cancer death worldwide. Early diagnostics significantly increases the chances of correct treatment and survival, but this process is tedious and often leads to a disagreement between pathologists.
+ Computer-aided diagnosis systems showed potential for improving diagnostic accuracy. But early detection and prevention can significantly reduce the chances of death. It is important to detect breast cancer as early as possible.
+</p>
+
+				<p style="font-family:Times New Roman;color:white;font-size:125%;">There are two types of tumors:Benign and Malignant</p>
+				<p style="font-family:Times New Roman;color:white;font-size:125%;">Benign tumor:Benign tumor is a tumor that does not invade its surrounding tissue or spread around the body.</p>
+			<p style="font-family:Times New Roman;color:white;font-size:125%;">Malignant tumor:A malignant tumor is a tumor that may invade its surrounding tissue or spread around the body.</p></div>
+			<div class="col-sm-6">
+				<div>
+					<h4 style="color:white;font-size:225%;">Upload Image Here</h4>
+			<form action = "http://localhost:5000/predict" id="upload-file" method="post" enctype="multipart/form-data">
+				<label for="imageUpload" class="upload-label">
+					Choose...
+				</label>
+				<input type="file" name="image" id="imageUpload" accept=".png, .jpg, .jpeg" >
+			</form>
+			<div class="image-section" style="display:none;">
+				<div class="img-preview">
+					<div id="imagePreview">
+					</div>
+				</div>
+				<div>
+					<button type="button" class="example " id="btn-predict">Predict!</button>
+				</div>
+			</div>
+<div class="loader" style="display:none;color:white"></div>
+<h3>
+				<span id="result" style="color:white"> </span>
+			</h3>
+</div>
+			</div>
+			  </div>
+		</div>
+		</div>
+    </div>
+</body>
+<footer>
+    <script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script>    
+</footer>
+</html>
+
